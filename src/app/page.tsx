@@ -264,7 +264,7 @@ export default function Home() {
       title: "Gruppentraining",
       description:
         "In kleinen Gruppen (2–4 Spieler) trainierst du spielnah, motiviert und mit direktem Feedback. Spaß und Entwicklung gehen Hand in Hand.",
-      image: "/images/tennis-doubles.jpg",
+      image: "/images/tennis-group.jpg",
     },
     {
       icon: <HeartIcon className="w-7 h-7" />,
@@ -421,7 +421,7 @@ export default function Home() {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden">
                 <Image
-                  src="/images/trainer-portrait.jpg"
+                  src="/images/trainer-male.jpg"
                   alt="Martin Prenzel – Tennistrainer"
                   fill
                   className="object-cover"
@@ -952,7 +952,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-slate-800 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-            <p>&copy; {new Date().getFullYear()} Martin Prenzel – Tennistraining Bad Brückenau</p>
+            <p>&copy; 2026 Martin Prenzel – Tennistraining Bad Brückenau</p>
             <div className="flex gap-4">
               <a href="#" className="hover:text-white transition-colors">Impressum</a>
               <a href="#" className="hover:text-white transition-colors">Datenschutz</a>
