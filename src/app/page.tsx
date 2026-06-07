@@ -959,8 +959,8 @@ export default function Home() {
           <div className="border-t border-slate-800 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
             <p>&copy; 2026 Martin Prenzel – Tennistraining Bad Brückenau</p>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-white transition-colors">Impressum</a>
-              <a href="#" className="hover:text-white transition-colors">Datenschutz</a>
+              <a href="/impressum" className="hover:text-white transition-colors">Impressum</a>
+              <a href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</a>
             </div>
           </div>
         </div>
