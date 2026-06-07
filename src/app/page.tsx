@@ -334,6 +334,7 @@ export default function Home() {
             src="/images/hero-court.jpg"
             alt="Tennisplatz"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -396,6 +397,7 @@ export default function Home() {
                   src="/images/training-action.jpg"
                   alt="Tennistraining in Aktion"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                   priority
                 />
@@ -419,11 +421,12 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden">
+              <div className="relative aspect-square rounded-2xl overflow-hidden">
                 <Image
                   src="/images/trainer-male.jpg"
                   alt="Martin Prenzel – Tennistrainer"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -504,6 +507,7 @@ export default function Home() {
                     src={t.image}
                     alt={t.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
@@ -719,6 +723,7 @@ export default function Home() {
           src="/images/court-green.jpg"
           alt="Tennisplatz Atmosphäre"
           fill
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-emerald-900/60" />
