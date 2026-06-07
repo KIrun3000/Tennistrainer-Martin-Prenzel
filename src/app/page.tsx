@@ -327,7 +327,7 @@ export default function Home() {
       <Navigation />
 
       {/* HERO */}
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+      <section className="relative pt-20 pb-12 md:pt-32 md:pb-24 overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
@@ -403,7 +403,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/30 to-transparent" />
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg px-5 py-3 border border-slate-100">
+              <div className="absolute -bottom-4 left-2 md:-left-4 bg-white rounded-xl shadow-lg px-4 md:px-5 py-2.5 md:py-3 border border-slate-100">
                 <div className="flex items-center gap-1 text-amber-400 mb-1">
                   {[...Array(5)].map((_, i) => (
                     <StarIcon key={i} className="w-4 h-4" />
@@ -417,11 +417,11 @@ export default function Home() {
       </section>
 
       {/* ÜBER MARTIN */}
-      <section id="ueber-mich" className="py-20 md:py-28 bg-white">
+      <section id="ueber-mich" className="py-16 md:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="relative">
-              <div className="relative aspect-square rounded-2xl overflow-hidden">
+              <div className="relative aspect-[4/3] lg:aspect-square rounded-2xl overflow-hidden">
                 <Image
                   src="/images/trainer-male.jpg"
                   alt="Martin Prenzel – Tennistrainer"
@@ -430,7 +430,7 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute -z-10 -top-4 -right-4 w-full h-full rounded-2xl bg-emerald-100/50" />
+              <div className="hidden lg:block absolute -z-10 -top-4 -right-4 w-full h-full rounded-2xl bg-emerald-100/50" />
             </div>
 
             <div>
@@ -971,7 +971,7 @@ export default function Home() {
         href="https://wa.me/491234567890"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-40 w-14 h-14 bg-green-500 text-white rounded-full shadow-lg shadow-green-500/30 flex items-center justify-center hover:bg-green-600 hover:scale-110 transition-all"
+        className="fixed bottom-5 right-5 z-40 w-13 h-13 md:w-14 md:h-14 bg-green-500 text-white rounded-full shadow-lg shadow-green-500/30 flex items-center justify-center hover:bg-green-600 hover:scale-110 transition-all"
         aria-label="WhatsApp"
       >
         <WhatsAppIcon className="w-7 h-7" />
