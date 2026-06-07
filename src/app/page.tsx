@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 /* ─── Icons (inline SVG components) ─── */
 function TennisIcon({ className = "w-6 h-6" }: { className?: string }) {
@@ -256,30 +257,35 @@ export default function Home() {
       title: "Einzeltraining",
       description:
         "Volle Aufmerksamkeit, individuelle Analyse und gezieltes Training deiner Schwächen. Ideal für schnelle Fortschritte – egal ob Anfänger oder Turnierspieler.",
+      image: "/images/tennis-serve.jpg",
     },
     {
       icon: <UsersIcon className="w-7 h-7" />,
       title: "Gruppentraining",
       description:
         "In kleinen Gruppen (2–4 Spieler) trainierst du spielnah, motiviert und mit direktem Feedback. Spaß und Entwicklung gehen Hand in Hand.",
+      image: "/images/tennis-doubles.jpg",
     },
     {
       icon: <HeartIcon className="w-7 h-7" />,
       title: "Kinder- & Jugendtraining",
       description:
         "Spielerischer Einstieg für die Kleinsten, systematischer Aufbau für Jugendliche. Technik, Koordination und Freude am Spiel stehen im Mittelpunkt.",
+      image: "/images/tennis-kid.jpg",
     },
     {
       icon: <TargetIcon className="w-7 h-7" />,
       title: "Erwachsenentraining",
       description:
         "Ob Wiedereinstieg oder Verbesserung deines Spiels – du bekommst Training, das zu deinem Level und deinen Zielen passt.",
+      image: "/images/tennis-backhand.jpg",
     },
     {
       icon: <AwardIcon className="w-7 h-7" />,
       title: "Mannschaftstraining",
       description:
         "Taktisches Training, Matchsituationen und Teamaufstellung – damit dein Team bestens vorbereitet in die Saison geht.",
+      image: "/images/tennis-training.jpg",
     },
   ];
 
@@ -322,9 +328,19 @@ export default function Home() {
 
       {/* HERO */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-slate-50" />
-        <div className="absolute top-20 right-0 w-96 h-96 bg-emerald-100/40 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-emerald-50/60 rounded-full blur-3xl" />
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-court.jpg"
+            alt="Tennisplatz"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/40" />
+        </div>
+        <div className="absolute top-20 right-0 w-96 h-96 bg-emerald-100/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-emerald-50/40 rounded-full blur-3xl" />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -375,12 +391,15 @@ export default function Home() {
             </div>
 
             <div className="relative">
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-emerald-200 to-emerald-400 shadow-2xl shadow-emerald-200/40">
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-white/80">
-                  <TennisIcon className="w-20 h-20 mb-4 opacity-60" />
-                  <span className="text-lg font-medium">Trainerfoto</span>
-                  <span className="text-sm opacity-60 mt-1">Martin Prenzel</span>
-                </div>
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-emerald-200/40">
+                <Image
+                  src="/images/training-action.jpg"
+                  alt="Tennistraining in Aktion"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/30 to-transparent" />
               </div>
               <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg px-5 py-3 border border-slate-100">
                 <div className="flex items-center gap-1 text-amber-400 mb-1">
@@ -400,11 +419,13 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 overflow-hidden">
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-400">
-                  <UserIcon className="w-16 h-16 mb-3" />
-                  <span className="text-sm font-medium">Foto Martin</span>
-                </div>
+              <div className="aspect-square rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/trainer-portrait.jpg"
+                  alt="Martin Prenzel – Tennistrainer"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="absolute -z-10 -top-4 -right-4 w-full h-full rounded-2xl bg-emerald-100/50" />
             </div>
@@ -476,13 +497,24 @@ export default function Home() {
             {trainingsangebote.map((t, i) => (
               <div
                 key={i}
-                className="group bg-white rounded-2xl p-7 border border-slate-100 hover:border-emerald-200 hover:shadow-lg hover:shadow-emerald-50 transition-all duration-300"
+                className="group bg-white rounded-2xl overflow-hidden border border-slate-100 hover:border-emerald-200 hover:shadow-lg hover:shadow-emerald-50 transition-all duration-300"
               >
-                <div className="w-14 h-14 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
-                  {t.icon}
+                <div className="relative h-44 overflow-hidden">
+                  <Image
+                    src={t.image}
+                    alt={t.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  <div className="absolute top-3 left-3 w-11 h-11 rounded-lg bg-white/90 backdrop-blur-sm text-emerald-600 flex items-center justify-center shadow-sm">
+                    {t.icon}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{t.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{t.description}</p>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{t.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{t.description}</p>
+                </div>
               </div>
             ))}
 
@@ -506,7 +538,11 @@ export default function Home() {
       </section>
 
       {/* PREISE */}
-      <section id="preise" className="py-20 md:py-28 bg-white">
+      <section id="preise" className="relative py-20 md:py-28 bg-white overflow-hidden">
+        {/* Decorative tennis ball */}
+        <div className="absolute -right-16 -top-16 w-64 h-64 rounded-full opacity-5">
+          <Image src="/images/tennis-ball.jpg" alt="" fill className="object-cover rounded-full" />
+        </div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider">
@@ -674,6 +710,33 @@ export default function Home() {
           <p className="text-center text-sm text-slate-400 mt-8">
             * Platzhalter – echte Testimonials werden ergänzt
           </p>
+        </div>
+      </section>
+
+      {/* IMAGE BANNER */}
+      <section className="relative h-64 md:h-80 overflow-hidden">
+        <Image
+          src="/images/court-green.jpg"
+          alt="Tennisplatz Atmosphäre"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-emerald-900/60" />
+        <div className="relative h-full flex items-center justify-center text-center px-4">
+          <div>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">
+              Bereit für dein nächstes Level?
+            </h2>
+            <p className="text-emerald-100 text-lg mb-6 max-w-lg mx-auto">
+              Starte jetzt mit einer unverbindlichen Probestunde
+            </p>
+            <a
+              href="#kontakt"
+              className="inline-flex items-center gap-2 bg-white text-emerald-700 font-semibold px-8 py-3.5 rounded-full hover:bg-emerald-50 transition-colors"
+            >
+              Probestunde vereinbaren
+            </a>
+          </div>
         </div>
       </section>
 
